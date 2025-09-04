@@ -1,0 +1,100 @@
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #0d47a1, #42a5f5); /* Dark blue to sky blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.hidden { display: none; }
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Home & Result Screen */
+.screen, .result-screen {
+  text-align: center;
+}
+
+.result-message {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.result-message.celebrate {
+  color: yellow;
+  animation: pop 1s ease infinite alternate;
+}
+
+.result-message.sad {
+  color: lightgray;
+  animation: shake 0.5s ease infinite;
+}
+
+@keyframes pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Game */
+.game-container {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cell.x { color: #0d47a1; }
+.cell.o { color: #d32f2f; }
+.cell.win { background: gold !important; }
+
+/* Controls */
+.controls {
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Button Colors */
+.btn.start { background: #42a5f5; color: white; }
+.btn.reset { background: #ff9800; color: white; }
+.btn.undo { background: #9c27b0; color: white; }
+.btn.new-game { background: #4caf50; color: white; }
+.btn.home { background: #f44336; color: white; }
